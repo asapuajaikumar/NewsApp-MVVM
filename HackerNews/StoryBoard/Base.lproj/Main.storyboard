@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HnX-tH-0pg">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="e21-PH-Ymv">
+            <objects>
+                <navigationController id="HnX-tH-0pg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lIQ-wP-pwb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7iv-ME-2mN" kind="relationship" relationship="rootViewController" id="nZL-C8-9hu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Q0-6a-zFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2513" y="-79"/>
+        </scene>
+        <!--Top Stories View Controller-->
+        <scene sceneID="xFH-AM-tdr">
+            <objects>
+                <viewController id="7iv-ME-2mN" customClass="TopStoriesViewController" customModule="HackerNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nFn-Dp-wdL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oaI-zw-n9E">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7iv-ME-2mN" id="wmz-x5-f3v"/>
+                                    <outlet property="delegate" destination="7iv-ME-2mN" id="FU0-iA-40I"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oaI-zw-n9E" firstAttribute="top" secondItem="Kx8-L7-A1m" secondAttribute="top" id="10I-Wj-zFq"/>
+                            <constraint firstItem="oaI-zw-n9E" firstAttribute="leading" secondItem="Kx8-L7-A1m" secondAttribute="leading" id="CUa-E6-ibQ"/>
+                            <constraint firstItem="oaI-zw-n9E" firstAttribute="trailing" secondItem="Kx8-L7-A1m" secondAttribute="trailing" id="fac-8h-qBE"/>
+                            <constraint firstItem="Kx8-L7-A1m" firstAttribute="bottom" secondItem="oaI-zw-n9E" secondAttribute="bottom" id="rQ1-J3-W6c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kx8-L7-A1m"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SSk-fa-Thf"/>
+                    <connections>
+                        <outlet property="storiesTable" destination="oaI-zw-n9E" id="E6k-Nb-le1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wwH-zr-6I9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1513" y="-92"/>
+        </scene>
+        <!--Story Details View Controller-->
+        <scene sceneID="j6j-bx-ba6">
+            <objects>
+                <viewController storyboardIdentifier="StoryDetailsViewController" id="k3W-M8-cA1" customClass="StoryDetailsViewController" customModule="HackerNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mPJ-xz-vhU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tgi-xi-kxv">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="e1L-Se-KPU" firstAttribute="trailing" secondItem="Tgi-xi-kxv" secondAttribute="trailing" id="9gY-nm-u4E"/>
+                            <constraint firstItem="Tgi-xi-kxv" firstAttribute="top" secondItem="e1L-Se-KPU" secondAttribute="top" id="X2Q-Of-UAc"/>
+                            <constraint firstItem="Tgi-xi-kxv" firstAttribute="leading" secondItem="e1L-Se-KPU" secondAttribute="leading" id="ak7-cG-Kbd"/>
+                            <constraint firstItem="e1L-Se-KPU" firstAttribute="bottom" secondItem="Tgi-xi-kxv" secondAttribute="bottom" id="i99-xv-yDI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e1L-Se-KPU"/>
+                    </view>
+                    <connections>
+                        <outlet property="storyDetailsWebView" destination="Tgi-xi-kxv" id="EEw-Jz-SLf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PxL-a5-27c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-688" y="-86"/>
+        </scene>
+    </scenes>
+</document>
