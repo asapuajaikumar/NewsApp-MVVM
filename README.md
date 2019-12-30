@@ -1,2 +1,5 @@
 # NewsApp-MVVM
-News app with List and details page with MVVM
+News application with List and Details page
+Implemented with MVVM Architecture
+Clean Code
+
